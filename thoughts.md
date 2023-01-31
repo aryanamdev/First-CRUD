@@ -6,3 +6,4 @@
  4. When make request to Database, we have to use async await because Database is on another continent.
  5. It is necessary to connect and require connection to Database in our app.js
  6. To use json we have to do `app.use(express.json())`
+ 7. We can connect our DB to frontend with axios.

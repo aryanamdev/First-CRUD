@@ -32,7 +32,7 @@ exports.createUser = async (req, res) => {
 };
 
 // getting users
-exports.getUser = async (req, res) => {
+exports.getUsers = async (req, res) => {
   try {
     const users = await User.find();
     res.status(200).json({
@@ -49,18 +49,36 @@ exports.getUser = async (req, res) => {
 };
 
 // editing the user
-exports.uditUser = async (req, res) => {
+exports.editUser = async (req, res) => {
   try {
     const user = await User.findByIdAndUpdate(req.params.id, req.body);
     res.status(200).json({
       success: true,
-      message: "User Updated Successfully",
+      message: "User updated Successfully",
     });
-  } catch (err) {
-    console.error(err);
+  } catch (error) {
+    console.log(error);
     res.status(401).json({
       success: false,
-      message: err.message,
+      message: error.message,
+    });
+  }
+};
+
+// deleting the user
+exports.deleteUser = async (req, res) => {
+  try {
+    const userId = req.params.id;
+    const user = await User.findByIdAndDelete(userId);
+    res.status(200).json({
+      success: true,
+      message: "User Deleted Successfully",
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(401).json({
+      success: false,
+      message: error.message,
     });
   }
 };
