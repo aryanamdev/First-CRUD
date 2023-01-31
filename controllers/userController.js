@@ -10,22 +10,24 @@ exports.home = (req, res) => {
 exports.createUser = async (req, res) => {
   try {
     const { name, email } = req.body;
-    // To check all the Details
+    // To check all the details
     if (!name || !email) {
       throw new Error("Name and Email are Required");
     }
-    const userExists = await findOne({ email });
-    if (userExists) {
+    const userExits = await User.findOne({ email });
+    if (userExits) {
       throw new Error("Email Already Exists");
     }
+    // Inserting into the Database
 
     const user = await User.create({ name, email });
-    res.status(200).json({
+    res.status(201).json({
       success: true,
-      message: "User created Successfully",
+      message: "User Created Successfully",
+      user,
     });
-  } catch (err) {
-    console.log(err);
+  } catch (error) {
+    console.log(error);
   }
 };
 
