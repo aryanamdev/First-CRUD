@@ -20,11 +20,13 @@ exports.createUser = async (req, res) => {
     }
 
     const user = await User.create({ name, email });
-    res.status(201).json({
+    res.status(200).json({
       success: true,
       message: "User created Successfully",
     });
-  } catch (err) {}
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 // getting users
@@ -60,11 +62,3 @@ exports.uditUser = async (req, res) => {
     });
   }
 };
-//deleting user
-exports.deleteUser = async (req, res)=> {
-    try{
-        const user = User.findByIdAndDelete()
-    }
-}
-
-
