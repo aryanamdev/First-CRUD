@@ -7,3 +7,4 @@
  5. It is necessary to connect and require connection to Database in our app.js
  6. To use json we have to do `app.use(express.json())`
  7. We can connect our DB to frontend with axios.
+ 8. Submit method is used to connect to database
