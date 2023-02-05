@@ -8,9 +8,15 @@ const connectToDB = require("./config/db.connection");
 const userRouter = require("./routes/userRoutes");
 const app = express();
 
+// importing cors
+const cors = require("cors");
+
 // json middleware
 app.use(express.json());
 // url encoded
+
+// configuring cors middleware
+app.use(cors());
 
 // connecting to database
 connectToDB();

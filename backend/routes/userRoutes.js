@@ -4,7 +4,7 @@ const {
   home,
   createUser,
   editUser,
-  getUsers,
+  getUsers, 
   deleteUser,
 } = require("../controllers/userController");
 const { create } = require("../models/userModel");
