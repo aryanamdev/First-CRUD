@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import axios from "axios";
 
@@ -14,6 +13,7 @@ function Form() {
       email: userEmail,
     };
     const res = await axios.post("/createUser", data);
+    console.log(res);
   };
 
   const handleSubmit = (event) => {

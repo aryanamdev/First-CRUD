@@ -73,7 +73,7 @@ const UserList = () => {
                     <td className="px-4 py-3">{user.email}</td>
                     <td className="px-4 py-3">
                       <button
-                        className="hover:text-green-500"
+                        className="hover:bg-green-500 px-2 py-1 rounded-md text-white bg-green-400"
                         onClick={() => handleEdit(user)}
                       >
                         Edit
@@ -81,7 +81,7 @@ const UserList = () => {
                     </td>
                     <td className="px-4 py-3 text-lg text-gray-900">
                       <button
-                        className="hover:text-red-500"
+                        className="hover:bg-red-500 px-2 py-1 rounded-md text-white bg-red-400"
                         onClick={() => handleDelete(user._id)}
                       >
                         Delete
