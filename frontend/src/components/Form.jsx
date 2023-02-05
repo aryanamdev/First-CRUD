@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 function Form() {
+  const BASE_URL = "https://first-crud-production.up.railway.app/";
   // To store the value from frontend
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
@@ -12,7 +13,7 @@ function Form() {
       name: userName,
       email: userEmail,
     };
-    const res = await axios.post("/createUser", data);
+    const res = await axios.post(`${BASE_URL}/createUser`, data);
     console.log(res);
   };
 
